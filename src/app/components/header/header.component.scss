@@ -1,0 +1,16 @@
+.sticky{
+    top: 0px;
+    position: sticky;
+    z-index: 1001;
+}
+
+.warning-banner{
+    width: 100%;
+    color: white;
+    background-color: rgb(210, 47, 37);
+    transition: all 0.5s;
+    display: block;
+    font-family: 'Playfair Display', Georgia, serif;
+    text-align: center;
+
+}
