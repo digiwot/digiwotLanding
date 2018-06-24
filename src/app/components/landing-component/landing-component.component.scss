@@ -32,5 +32,56 @@
 .croud-funding{
     text-align: center;
     // background-image: file:///Users/sumant/Downloads/artem-bali-590545-unsplash%20(2).jpg;
-    background-image: url('https://www.reduceimages.com/download.php?image=c5bffd8a4f');
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShnK3LblJ_OfQgKBcrhq8bM7fuoUMPoQRrH4uDasvDjPADeT20');
+    // height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+
+}
+
+.crowd-funding-options{
+    max-height: 20px;
+}
+.custom-container{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.cause-paragraph{
+    max-width: 500px;
+    margin: auto;
+}
+
+.about-us-container{
+    text-align: center;
+}
+.about-us-text{
+    color: black;
+    text-align: center;
+    text-decoration: underline;
+    width: 100%;
+    font-size: 40px;
+    margin: 25px;
+}
+.card-image{
+    border-radius: 50%;
+}
+.custom-card{
+    border: none;
+    padding: 5px;
+    width: 19rem !important;
+    margin: auto;
+    min-height: 100%;
+
+}
+.custom-card:hover{
+    box-shadow: 0px 0px 1px 1px #9e9292;
+}
+.custom-card a{
+    color: inherit;
+}
+.custom-card a:hover{
+    text-decoration: none;
+    
 }
