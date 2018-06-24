@@ -85,3 +85,43 @@
     text-decoration: none;
     
 }
+
+.subscription-container{
+    background-color: rgb(210, 47, 37);
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px; 
+    padding: 25px 0;
+}
+.subscription-container .text-muted{
+    color: white !important;
+}
+.subs-text{
+    text-align: right;
+    font-size: 36px;
+    margin: auto;
+}
+
+.subs-button{
+    margin: auto;
+    padding-bottom: 7px;
+}
+
+@media (max-width: 767.98px) { 
+    
+    .subs-text{
+        text-align: center;
+        font-size: 30px;
+        margin: auto;
+    }
+
+    .subs-form{
+        padding: 0 30px;
+    }
+
+    .subs-button{
+        text-align: right;
+        padding-right: 30px;
+    }
+
+ }
