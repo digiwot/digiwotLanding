@@ -1,0 +1,36 @@
+.footer-background{
+    background-color: #3e4551!important;
+    color: white;
+    font-size: small;
+    bottom: 0px;
+}
+
+.footer-background a{
+    color: white;
+}
+
+.margin-bottom-zero{
+    margin-bottom: 0px;
+}
+
+.stay-in-touch{
+    padding-bottom: 12px;
+}
+
+.fab:hover{
+    color: cadetblue;
+}
+
+.footer-row{
+    padding: 14px;
+}
+
+.margin-0{
+    margin: 0px;
+}
+
+@media (max-width: 767.98px) { 
+    .social-media {
+        padding: 10px;
+    }
+}

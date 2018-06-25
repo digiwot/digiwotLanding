@@ -1,0 +1,9 @@
+<div class="signup-page-body container-fluid">
+    <app-common-signup (selectedSignupToParent)="getSelectedLogin($event)" *ngIf="selectedSignup == 'commonSignup'"></app-common-signup>
+    <app-customer-signup *ngIf="selectedSignup == 'customerSignup'"></app-customer-signup>
+</div>
+
+
+
+
+
