@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-merchant-signup',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MerchantSignupComponent implements OnInit {
 
+  @Output() mainSignupPage = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit() {
+  }
+
+  gotoMainSignupPage() {
+    this.mainSignupPage.emit('commonSignup');
   }
 
 }

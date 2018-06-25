@@ -2,8 +2,37 @@
     <div class="col-md-3 col-lg-3"></div>
     <div class="col-sm-12 col-md-6 col-lg-6 text-center">
       <div class="sign-up-box">
-        <div class="button-continer col-10 col-sm-8 align-middle">
-          customer signup box
+        <div class="button-continer col-12 col-sm-10 align-middle">
+          <div class="signup-box-header">
+            Customer account sign up
+          </div>
+            <form>
+                <div class="form-group">
+                    <label for="name">Your full name</label>
+                    <input type="text" class="form-control" id="name" placeholder="jason smith">
+                  </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="abcd@mail.com">
+                  <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword2">Confirm Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+                  </div>
+                <div class="form-group">
+                    <label for="contactNumber">Contact number</label>
+                    <input type="tel" class="form-control" id="contact-number" placeholder="+977 9801234567">
+                  </div>
+                <button type="submit" class="btn btn-primary submit-button">Sign up</button>
+                <button type="button" class="btn btn-secondary" (click)="gotoMainSignupPage()">Cancel</button>
+                <br>
+                <p class="existing-accout"><a href="/login">Have an account already! Login</a></p>
+              </form>
         </div>
       </div>
     </div>

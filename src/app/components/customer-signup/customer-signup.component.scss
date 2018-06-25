@@ -1,47 +1,50 @@
 .full-height{
-    height: 98vh;
+    min-height: 98vh;
 }
-
 
 .sign-up-box{
     border: 1px solid gray;
     border-radius: 10px;
-    // vertical-align: middle;
-    margin: 200px auto;
-    height: 362px;
+    margin: 100px auto;
     box-shadow: 0px 0px 8px grey;
     min-width: 400px;
     max-width: 400px;
     display: inline-block;
     background-color: #d8aaaae0;
+    padding: 20px 0;
+    padding-bottom: 5px;
 }
-
 
 .button-continer{
     margin: auto;
+    text-align: left;
+}
+.existing-accout{
+    font-size: small;
+    float: right;
+    margin-top: 10px;
+}
+
+.existing-accout a{
+    color: black;
+}
+
+.submit-button{
+    margin-right: 10px;
+}
+
+.signup-box-header{
     text-align: center;
-    margin: 18%;
+    font-size: large;
+    font-weight: bolder;
+    margin-bottom: 15px;
+    text-transform: capitalize;
 
 }
-// .button-continer button{
-//     width: 100%;
-//     margin-bottom: 20px;
-//     height: 50px;
-// }
-
-
-
-
-
-
-
 
 
 @media (max-width: 575.98px) { 
-    .button-continer{
-        margin: 10%;
-    
-    }
+
  }
 @media (max-width: 767.98px) { 
     .sign-up-box{
