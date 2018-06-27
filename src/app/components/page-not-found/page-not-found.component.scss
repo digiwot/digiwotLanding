@@ -1,0 +1,17 @@
+.error-page-container{
+    height: 76vh;
+    background: rgb(190, 175, 156);
+    text-align: center;
+    font-family: monospace;
+}
+.error-page-image{
+    height: 200px;
+    margin: auto;
+    width: 200px;
+    background-image: url(https://www.vdyoutube.com/static/sorry.png);
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 100px;
+    display: inline-block;
+}

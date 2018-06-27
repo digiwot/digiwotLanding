@@ -7,7 +7,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { LandingComponentComponent } from './components/landing-component/landing-component.component';
 import { SignUpPageComponent } from './pages/sign-up/sign-up.page.component';
-import { LoginComponent } from './pages/login/login.component';
 
 import { CommonSignupComponent } from './components/common-signup/common-signup.component';
 import { MerchantSignupComponent } from './components/merchant-signup/merchant-signup.component';
@@ -17,9 +16,19 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { PageNotFoundPageComponent } from './pages/page-not-found-page/page-not-found-page.component';
 
 import { RouterModule, Routes } from '@angular/router';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { LoginComponent } from './components/login/login.component';
+import { WelcomePageComponent } from './pages/welcome-page/welcome-page.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ResetPasswordPageComponent } from './pages/reset-password-page/reset-password-page.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 const appRoutes: Routes = [
   { path: 'signup', component: SignUpPageComponent },
+  { path: 'login', component: LoginPageComponent },
+  { path: 'resetpassword', component: ResetPasswordPageComponent },
   { path: '', component: LandingPageComponent },
   // { path: 'hero/:id',      component: HeroDetailComponent },
   // {
@@ -41,18 +50,25 @@ const appRoutes: Routes = [
     LandingPageComponent,
     LandingComponentComponent,
     SignUpPageComponent,
-    LoginComponent,
     CommonSignupComponent,
     MerchantSignupComponent,
     CustomerSignupComponent,
     JobseekerSignupComponent,
     PageNotFoundComponent,
-    PageNotFoundPageComponent
+    PageNotFoundPageComponent,
+    LoginPageComponent,
+    LoginComponent,
+    WelcomePageComponent,
+    WelcomeComponent,
+    ProfilePageComponent,
+    ProfileComponent,
+    ResetPasswordPageComponent,
+    ResetPasswordComponent
   ],
   imports: [
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      // { enableTracing: true } // <-- debugging purposes only
     ),
     BrowserModule
   ],
