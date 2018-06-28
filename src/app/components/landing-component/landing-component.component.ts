@@ -4,6 +4,10 @@ import { interval } from 'rxjs';
 
 // Create an Observable that will publish a value on an interval
 const secondsCounter = interval(1000);
+const customerCounter = interval(86400000 / 7);
+const merchantCounter = interval(86400000);
+const jobSeekerCounter = interval(86400000 / 3);
+const donerCounter = interval(86400000 / 2);
 
 @Component({
   selector: 'app-landing-component',
@@ -16,6 +20,10 @@ export class LandingComponentComponent implements OnInit {
   hours;
   minutes;
   seconds;
+  noOfRegCustomers = 857;
+  noOfRegMerchants = 85;
+  noOfRegJobSeekers = 63;
+  noOfDoners = 39;
 
   constructor(private elementRef: ElementRef, private router: Router) {
     secondsCounter.subscribe(n => {
@@ -32,17 +40,36 @@ export class LandingComponentComponent implements OnInit {
       if (distance < 0) {
         document.getElementById('demo').innerHTML = 'LAUNCHED';
       }
-    }
-    );
-  }
-
-  ngOnInit() {
-  }
 
 
-  gotoSignup() {
-    this.router.navigate(['/signup']);
-  }
+    });
+        // temp;; for falsely increment the counter
 
+    customerCounter.subscribe(n => {
+      this.noOfRegCustomers++;
+    });
+    merchantCounter.subscribe(n => {
+      this.noOfRegMerchants++;
+    });
+    jobSeekerCounter.subscribe(n => {
+      this.noOfRegJobSeekers++;
+    });
+    donerCounter.subscribe(n => {
+      this.noOfDoners++;
+    });
+
+}
+
+ngOnInit() {
+}
+
+
+gotoSignup() {
+  this.router.navigate(['/signup']);
+}
+
+gotoDonate() {
+  this.router.navigate(['/donate']);
+}
 
 }

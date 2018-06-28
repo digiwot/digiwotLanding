@@ -1,0 +1,20 @@
+<div class="container donate-container">
+  <div class="row donate-buttons">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <!-- <a href="https://www.paypal.com/" id="paypal-button"><button type="button" class="btn btn-info"><i class="fab fa-paypal"></i> Paypal</button></a> -->
+      <button id="paypal-button" type="button" class="btn btn-info"></button>
+      <!-- <input type="number" [(ngModel)]="paymentAmount" /> -->
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <!-- <button id="rzp-button1">Pay</button> -->
+      <button type="button" class="btn btn-info" id="rzp-button1" (click)="payByRazorpay()"><i class="fas fa-wallet"></i> E-Wallet</button>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <button type="button" class="btn btn-info"><i class="far fa-credit-card"></i> debit/credit card</button>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <button type="button" class="btn btn-info"><i class="fab fa-cc-mastercard"></i> net banking</button>
+      </div>
+
+  </div>
+</div>

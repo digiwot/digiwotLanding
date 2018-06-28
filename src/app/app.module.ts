@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -24,7 +25,9 @@ import { ProfilePageComponent } from './pages/profile-page/profile-page.componen
 import { ProfileComponent } from './components/profile/profile.component';
 import { ResetPasswordPageComponent } from './pages/reset-password-page/reset-password-page.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DonatePageComponent } from './pages/donate-page/donate-page.component';
+import { DonateComponent } from './components/donate/donate.component';
+
 
 const appRoutes: Routes = [
   { path: 'signup', component: SignUpPageComponent },
@@ -33,6 +36,7 @@ const appRoutes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'home', component: LandingPageComponent },
   { path: 'welcome', component: WelcomePageComponent },
+  { path: 'donate', component: DonatePageComponent },
   // { path: 'hero/:id',      component: HeroDetailComponent },
   // {
   //   path: 'heroes',
@@ -66,7 +70,9 @@ const appRoutes: Routes = [
     ProfilePageComponent,
     ProfileComponent,
     ResetPasswordPageComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    DonatePageComponent,
+    DonateComponent
   ],
   imports: [
     BrowserModule,
