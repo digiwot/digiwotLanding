@@ -15,6 +15,19 @@
             <label for="displayName">Display name</label>
             <input type="text" class="form-control" id="display-name">
           </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword2">Confirm Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword2">
+          </div>
 
           <div class="form-group">
             <label for="address">Address</label>
@@ -29,6 +42,11 @@
             <input type="text" class="form-control" id="city">
           </div>
           <div class="form-group">
+            <label for="companyName">Company Name</label>
+            <input type="text" class="form-control" id="companyName">
+          </div>
+
+          <div class="form-group">
             <label for="state">State/Province/Region</label>
             <input type="text" class="form-control" id="state">
           </div>
@@ -38,26 +56,15 @@
           </div>
           <div class="form-group">
             <label for="country">Country</label>
-            <select class="custom-select">
+            <select class="custom-select" [(ngModel)]="selectedCountry" name="country">
               <option selected>--not selected--</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+              <option *ngFor="let country of countries" [value]="country">{{country}}</option>
             </select>
           </div>
-
+          <!-- if country is india -->
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword2">Confirm Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword2">
+            <label for="Pan">PAN No</label>
+            <input type="text" class="form-control" id="panNo">
           </div>
           <div class="form-group">
             <label for="contactNumber">Contact number</label>
@@ -65,27 +72,26 @@
           </div>
           <div class="form-group">
             <label for="mainProductCategory">Main Product Category</label>
-            <select class="custom-select custom-select">
+            <select class="custom-select" [(ngModel)]="selectedMainProduct" name="mainProduct">
               <option selected>--not selected--</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+              <option *ngFor="let mainProduct of mainProductCategories" [value]="mainProduct">{{mainProduct}}</option>
             </select>
           </div>
           <div class="form-group">
             <label for="noOfProducts">Number of products you want to sell</label>
-            <input type="number" class="form-control" id="no-of-products">
+            <select class="custom-select" [(ngModel)]="selectedNoOfProducts" name="noOfProducts">
+              <option selected>--not selected--</option>
+              <option *ngFor="let noOfProduct of noOfProducts" [value]="noOfProduct">{{noOfProduct}}</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="brandOwner">Do you own any brand for the product you are selling?</label>
-            <select class="custom-select custom-select">
+            <select class="custom-select" [(ngModel)]="selectedOwningProduct" name="ownedProduct">
               <option selected>--not selected--</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+              <option *ngFor="let owningProduct of owningProducts" [value]="owningProduct">{{owningProduct}}</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-primary submit-button">Sign up</button>
+          <button type="submit" class="btn btn-primary submit-button" (click)="signup()">Sign up</button>
           <button type="button" class="btn btn-secondary" (click)="gotoMainSignupPage()">Cancel</button>
           <br>
           <p class="existing-accout">

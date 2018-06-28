@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { interval } from 'rxjs';
 
@@ -16,7 +17,7 @@ export class LandingComponentComponent implements OnInit {
   minutes;
   seconds;
 
-  constructor(private elementRef: ElementRef) {
+  constructor(private elementRef: ElementRef, private router: Router) {
     secondsCounter.subscribe(n => {
       let countDownDate = new Date('Aug 1, 2018 00:00:00').getTime();
       let now = new Date().getTime();
@@ -39,6 +40,9 @@ export class LandingComponentComponent implements OnInit {
   }
 
 
+  gotoSignup() {
+    this.router.navigate(['/signup']);
+  }
 
 
 }

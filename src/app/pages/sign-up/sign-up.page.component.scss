@@ -1,6 +1,12 @@
 .signup-page-body{
     min-height: 100%;
-    background-image:url("http://3.bp.blogspot.com/-i3VdpebLbE8/TyoqsuY06SI/AAAAAAAAEJE/c64LspFI5uU/s1600/westminister+sketchjpg.jpg");
+    background-image:url("../../../assets/images/forms-background.jpg");
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position-x: center;
+
+    background-attachment: fixed;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }

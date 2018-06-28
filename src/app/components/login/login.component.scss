@@ -10,7 +10,7 @@
     // min-width: 400px;
     max-width: 500px;
     display: inline-block;
-    background-color: #d8aaaae0;
+    background-color: #aaadd8e0;
     padding: 20px 0;
     padding-bottom: 5px;
     width: 100%;
@@ -41,6 +41,13 @@
     margin-bottom: 15px;
     text-transform: capitalize;
 
+}
+
+.radio-group label{
+    margin: 5px 12px;
+}
+.radio-group input{
+    margin: 5px ;
 }
 
 

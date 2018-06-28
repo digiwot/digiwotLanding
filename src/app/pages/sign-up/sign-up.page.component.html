@@ -2,6 +2,7 @@
     <app-common-signup (selectedSignupToParent)="getSelectedLogin($event)" *ngIf="selectedSignup == 'commonSignup'"></app-common-signup>
     <app-customer-signup (mainSignupPage)="getSelectedLogin($event)" *ngIf="selectedSignup == 'customerSignup'"></app-customer-signup>
     <app-merchant-signup (mainSignupPage)="getSelectedLogin($event)" *ngIf="selectedSignup == 'merchantSignup'"></app-merchant-signup>
+    <app-jobseeker-signup (mainSignupPage)="getSelectedLogin($event)" *ngIf="selectedSignup == 'jobSeekerSignup'"></app-jobseeker-signup>
 </div>
 
 

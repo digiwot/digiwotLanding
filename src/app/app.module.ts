@@ -24,12 +24,15 @@ import { ProfilePageComponent } from './pages/profile-page/profile-page.componen
 import { ProfileComponent } from './components/profile/profile.component';
 import { ResetPasswordPageComponent } from './pages/reset-password-page/reset-password-page.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: 'signup', component: SignUpPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'resetpassword', component: ResetPasswordPageComponent },
   { path: '', component: LandingPageComponent },
+  { path: 'home', component: LandingPageComponent },
+  { path: 'welcome', component: WelcomePageComponent },
   // { path: 'hero/:id',      component: HeroDetailComponent },
   // {
   //   path: 'heroes',
@@ -66,11 +69,13 @@ const appRoutes: Routes = [
     ResetPasswordComponent
   ],
   imports: [
+    BrowserModule,
+    FormsModule,
     RouterModule.forRoot(
       appRoutes,
       // { enableTracing: true } // <-- debugging purposes only
-    ),
-    BrowserModule
+    )
+
   ],
   providers: [],
   bootstrap: [AppComponent]

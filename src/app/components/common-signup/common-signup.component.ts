@@ -42,6 +42,6 @@ export class CommonSignupComponent implements OnInit {
   setJobseekerSignup() {
     this.resetAllFlags();
     this.jobseekerSignupFlag = true;
-    this.selectedSignupToParent.emit('jobSeeker');
+    this.selectedSignupToParent.emit('jobSeekerSignup');
   }
 }
