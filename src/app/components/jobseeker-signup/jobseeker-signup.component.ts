@@ -8,13 +8,23 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 export class JobseekerSignupComponent implements OnInit {
 
   @Output() mainSignupPage = new EventEmitter<string>();
+  user = {
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    contactNumber: ''
+  };
   constructor() { }
 
   ngOnInit() {
   }
 
   gotoMainSignupPage() {
-    this.mainSignupPage.emit('jobSeekerSignup');
+    this.mainSignupPage.emit('commonSignup');
   }
 
+  jobSeekerSignup() {
+    console.log(this.user);
+  }
 }

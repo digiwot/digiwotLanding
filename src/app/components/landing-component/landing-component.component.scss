@@ -1,6 +1,6 @@
 .parallax {
-    background-image: url("../../../assets/images/parallax-banner.jpg");
-    min-height: 500px; 
+    background-image: url("../../../assets/images/bg1.jpg");
+    min-height: 650px; 
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -24,6 +24,15 @@
 .contact-us-button{
     margin: 10px;
     padding: 10px;
+    background: #3897f0;
+    border-color: #3897f0;
+    color: #fff;
+}
+.contact-us-button :focus{
+    border-color: #3897f0;
+}
+.contact-us-button:not(:disabled):not(.disabled):active{
+    opacity: 0.8;
 }
 .timer{
     padding: 10px;
@@ -165,7 +174,8 @@
     margin: auto;
 }
 .scoreboard-container{
-    background: linear-gradient(135.11deg, #a00f16 0%, #5b87bd 100%);
+    // background: linear-gradient(135.11deg, #a00f16 0%, #5b87bd 100%);
+    background: linear-gradient(135.11deg, #31d6bf 0%, #3e6ca5 100%);
     font-family: Lato, sans-serif;
 }
 .scoreboard-header{
@@ -175,8 +185,31 @@
     font-weight: 500;
     text-align: center;
     padding: 10px;
+    padding-top: 0;
 }
-
+.trophy{
+    background-image: url('../../../assets/images/trophy.png');
+    text-align: center;
+    height: 120px;
+    width: 120px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: auto;
+}
+.ribbon{
+    background-image: url('../../../assets/images/ribbon.png');
+    text-align: center;
+    height: 35px;
+    width: 120px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: auto;
+    padding-top: 5px;
+    color: white;
+    text-transform: uppercase;
+}
 .score-box{
     height: 75px;
     max-width: 130px;

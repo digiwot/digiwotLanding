@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  email: string;
-  password: string;
+  user = {
+    email: '',
+    password: '',
+    type: 'customer'
+  };
   constructor(private route: Router) { }
 
   ngOnInit() {
@@ -20,9 +23,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    if (this.email && this.email === 'me@mail.com') {
-      this.route.navigate(['/welcome']);
-    }
+    console.log(this.user);
   }
 
 }

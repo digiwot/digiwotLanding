@@ -8,6 +8,13 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class CustomerSignupComponent implements OnInit {
 
   @Output() mainSignupPage = new EventEmitter<string>();
+  user = {
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    contactNumber: ''
+  };
   constructor() { }
 
   ngOnInit() {
@@ -17,4 +24,7 @@ export class CustomerSignupComponent implements OnInit {
     this.mainSignupPage.emit('commonSignup');
   }
 
+  customerSignup() {
+    console.log(this.user);
+  }
 }

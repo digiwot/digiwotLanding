@@ -21,9 +21,13 @@ export class LandingComponentComponent implements OnInit {
   minutes;
   seconds;
   noOfRegCustomers = 857;
-  noOfRegMerchants = 85;
+  noOfRegMerchants = 21;
   noOfRegJobSeekers = 63;
-  noOfDoners = 39;
+  noOfDoners = 13;
+
+  timeDiff = new Date().getTime() - new Date('Jul 1, 2018 00:00:00').getTime();
+
+  noOfDaysLive =  Math.ceil(this.timeDiff / (1000 * 3600 * 24));
 
   constructor(private elementRef: ElementRef, private router: Router) {
     secondsCounter.subscribe(n => {
@@ -69,7 +73,7 @@ gotoSignup() {
 }
 
 gotoDonate() {
-  this.router.navigate(['/donate']);
+  this.router.navigate(['/donation']);
 }
 
 }

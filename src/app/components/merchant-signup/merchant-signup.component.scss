@@ -10,9 +10,12 @@
     // min-width: 400px;
     max-width: 500px;
     display: inline-block;
-    background-color: #2e8b57e8;
+    background: linear-gradient(135.11deg, #39e0c9 0%, #6d96ca 100%);
     padding: 20px 0;
     padding-bottom: 5px;
+    font-family: "Lucida Console", Monaco, monospace !important;
+    word-spacing: -4px;
+    color: white;
 }
 
 .button-continer{

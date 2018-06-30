@@ -19,11 +19,35 @@
     height: 50px;
 }
 .navbar-right{
-    float: right;
+    float: left;
+    // margin-left: 71%;
+    font-size: 18px;
+    width: 100%;
+
+}
+.navbar-right li>a{
+    padding: 5px;
+}
+.navbar-light{
+    border-bottom: 1px solid gray;
+    box-shadow: 0px 0px 3px 1px grey;
 }
 .navbar{
-    background-color: #4267b2;
+    // background: linear-gradient(135.11deg, #6bb9ae 0%, #4b715c 100%);
+    background-color: white;
 }
 .navbar-light .navbar-nav .nav-link{
-    color: white;
+    color: #147275;
+}
+
+.nav-item :hover{
+    background-color: #d8d8d8;
+}
+
+@media (min-width: 992px)  { 
+    .navbar-right{
+        float: right;
+        margin-left: 71%;
+        font-size: 18px;
+    }
 }

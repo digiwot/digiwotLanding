@@ -27,6 +27,8 @@ import { ResetPasswordPageComponent } from './pages/reset-password-page/reset-pa
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { DonatePageComponent } from './pages/donate-page/donate-page.component';
 import { DonateComponent } from './components/donate/donate.component';
+import { DonationFormPageComponent } from './pages/donation-form-page/donation-form-page.component';
+import { DonationFormComponent } from './components/donation-form/donation-form.component';
 
 
 const appRoutes: Routes = [
@@ -36,7 +38,7 @@ const appRoutes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'home', component: LandingPageComponent },
   { path: 'welcome', component: WelcomePageComponent },
-  { path: 'donate', component: DonatePageComponent },
+  { path: 'donation', component: DonationFormPageComponent },
   // { path: 'hero/:id',      component: HeroDetailComponent },
   // {
   //   path: 'heroes',
@@ -72,7 +74,9 @@ const appRoutes: Routes = [
     ResetPasswordPageComponent,
     ResetPasswordComponent,
     DonatePageComponent,
-    DonateComponent
+    DonateComponent,
+    DonationFormPageComponent,
+    DonationFormComponent
   ],
   imports: [
     BrowserModule,

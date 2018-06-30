@@ -6,29 +6,55 @@
         <div class="signup-box-header">
           Customer account sign up
         </div>
-        <form>
+        <form (ngSubmit)="customerSignup()" #customerSignupForm="ngForm">
           <div class="form-group">
             <label for="name">Your full name</label>
-            <input type="text" class="form-control" id="name" placeholder="jason smith">
+            <input type="text" id="name" name="name" class="form-control" required [(ngModel)]="user.name" #name="ngModel" placeholder="Your name">
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+              <div *ngIf="name.errors.required">Name is required.</div>
+            </div>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="abcd@mail.com">
-            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" class="form-control" required [(ngModel)]="user.email" #email="ngModel" placeholder="john@gmail.com"
+              pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+              <div *ngIf="email.errors.required">Email is required.</div>
+              <div *ngIf="email.errors && email.errors.pattern">Email is invalid</div>
+            </div>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" minlength="6" placeholder="Password" required #password="ngModel"
+              name="password" [(ngModel)]="user.password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{6,}$">
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+              <div *ngIf="password.errors.required">Password is required.</div>
+              <div *ngIf="password.errors.minlength">Password must be at least 6 characters long. </div>
+              <div *ngIf="password.errors && password.errors.pattern">Password should contain Minimum 6 characters, at least 1 uppercase letter, 1 lowercase letter, 1 number and 1 of #$^+=!*()@%&</div>
+            </div>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword2">Confirm Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+            <label for="cpassword">Confirm Password</label>
+            <input type="password" class="form-control" id="cpassword" placeholder="Repeat Password" required #cpassword="ngModel" name="cpassword"
+              [(ngModel)]="user.confirmPassword" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{6,}$">
+            <div *ngIf="cpassword.invalid && (cpassword.dirty || cpassword.touched)  && !cpassword.errors.pattern" class="alert alert-danger">
+              <div *ngIf="cpassword.errors.required"> Password is required.</div>
+            </div>
+            <div *ngIf="(cpassword.dirty || cpassword.touched) && (user.confirmPassword != user.password) && user.confirmPassword" class="alert alert-danger">
+              <div> Password is not matching.</div>
+            </div>
           </div>
           <div class="form-group">
             <label for="contactNumber">Contact number</label>
-            <input type="tel" class="form-control" id="contact-number" placeholder="+977 9801234567">
+            <input type="tel" class="form-control" id="contactNumber" minlength="10" maxlength="10" name="contactNumber" placeholder="+977 9801234567"
+              required #contactNumber="ngModel" [(ngModel)]="user.contactNumber" pattern="[0-9]*">
+            <div *ngIf="contactNumber.invalid && (contactNumber.dirty || contactNumber.touched)" class="alert alert-danger">
+              <div *ngIf="contactNumber.errors.required"> Contact number is required.</div>
+              <div *ngIf="contactNumber.errors && contactNumber.errors.pattern"> Invalid contact number.</div>
+              <div *ngIf="contactNumber.errors.minlength || contactNumber.errors.maxlength"> Should be of 10 digits long.</div>
+            </div>
           </div>
-          <button type="submit" class="btn btn-danger submit-button">Sign up</button>
+          <button type="submit" class="btn btn-danger submit-button" [disabled]="!customerSignupForm.form.valid">Sign up</button>
           <button type="button" class="btn btn-secondary" (click)="gotoMainSignupPage()">Cancel</button>
           <br>
           <p class="existing-accout">

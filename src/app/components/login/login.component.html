@@ -6,29 +6,40 @@
         <div class="signup-box-header">
           Login
         </div>
-        <form>
+        <form (ngSubmit)="login()" #loginForm="ngForm">
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="abcd@mail.com">
-            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            <input type="email" id="email" name="email" class="form-control" required [(ngModel)]="user.email" #email="ngModel" placeholder="john@gmail.com"
+              pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+              <div *ngIf="email.errors.required">Email is required.</div>
+              <div *ngIf="email.errors && email.errors.pattern">Email is invalid</div>
+            </div>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="*********">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password" required #password="ngModel" name="password"
+              [(ngModel)]="user.password">
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+              <div *ngIf="password.errors.required">Password is required.</div>
+            </div>
           </div>
           <div class="form-group radio-group">
-              <label class="radio-inline"><input type="radio" name="optradio">Customer</label>
-              <label class="radio-inline"><input type="radio" name="optradio">Merchant</label>
-              <label class="radio-inline"><input type="radio" name="optradio">Jobseeker</label>
+            <label class="radio-inline">
+              <input type="radio" name="optradio" value="customer" [(ngModel)]="user.type" name="customer">Customer</label>
+            <label class="radio-inline">
+              <input type="radio" name="optradio" value="merchant" [(ngModel)]="user.type" name="merchant">Merchant</label>
+            <label class="radio-inline">
+              <input type="radio" name="optradio" value="jobSeeker" [(ngModel)]="user.type" name="jobseeker">JobSeeker</label>
           </div>
-          
 
-          <button type="submit" class="btn btn-danger submit-button">Login</button>
+
+          <button type="submit" class="btn btn-danger submit-button" [disabled]="!loginForm.form.valid">Login</button>
           <button type="button" class="btn btn-secondary" (click)="gotoMainHomePage()">Cancel</button>
           <br>
           <p class="existing-accout col-12">
-            <a href="/resetpassword" class="col-6">Forgot password?</a>
-            <a href="/signup" class="col-6">Don`t have an account! Signup</a>
+            <a href="/resetpassword" class="col-5">Forgot password?</a>
+            <a href="/signup" class="col-7">Don`t have an account! Signup</a>
           </p>
         </form>
       </div>

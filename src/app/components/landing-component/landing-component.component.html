@@ -6,14 +6,16 @@
     <P>Experience "Better Life Together".</P>
     <h3>Goes live on August 1st 2018.</h3>
     <a href="#contact-us">
-      <button type="button" class="btn btn-danger contact-us-button">CONTACT US</button>
+      <button type="button" class="btn  contact-us-button">CONTACT US</button>
     </a>
+    <br>
+    <br>
     <p id="demo" class="timer">
       <span class="timer-box">{{days}}</span>Days
       <span class="timer-box">{{hours}}</span>Hours
       <span class="timer-box">
         {{minutes}}</span>Minutes
-      <span class="timer-box">{{seconds}}</span>Seconds to go live.
+      <span class="timer-box">{{seconds}}</span>Seconds
 
 
     </p>
@@ -21,6 +23,8 @@
 </div>
 <div class="container-fluid scoreboard-container">
   <div class="row col-12">
+    <div class="col-12 row"><div class="trophy"></div></div>
+    <div class="col-12 row"><div class="ribbon">{{noOfDaysLive}} days</div></div>
     <div class="col-12 scoreboard-header"> registration score board</div>
   </div>
   <div class="row col-12">
@@ -38,7 +42,7 @@
     </div>
     <div class="col-12 col-sm-3 score-box-div">
         <div class="col-12 score-box">{{noOfDoners}}</div>
-        <div class="col-12 score-text">Doners</div>
+        <div class="col-12 score-text">Donors</div>
     </div>
   </div>
 </div>
@@ -48,7 +52,7 @@
     <h1>Help Our Cause "Crowd Funding"</h1>
     <p class="cause-paragraph">Your support and contributions will enable us to meet our goals and improve conditions. Your generous donation will fund
       our mission.</p>
-    <button type="button" class="btn btn-danger contact-us-button" (click)="gotoDonate()">
+    <button type="button" class="btn contact-us-button" (click)="gotoDonate()">
       <i class="fas fa-coins"></i> DONATE NOW</button>
     <div>
       <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/cc-badges-ppmcvdam.png" data-ux="Image" data-aid="PAYMENT_CREDIT_CARD_BADGES_RENDERED"
@@ -82,7 +86,7 @@
             <b>August 1, 2018.</b>
           </p>
           <br>
-          <p class="bottom-feed1">NEPAL | INDIA | CHINA</p>
+          <p class="bottom-feed1"><b>NEPAL | INDIA | CHINA</b></p>
 
         </div>
       </div>
@@ -100,7 +104,7 @@
           <p class="card-text">Nepalese-Indian Entrepreneur Aakash Agarwal is the visionary leader of DIGIWOT Inc. (Digital World Of Trade) networks.He
             is one of the few people in the world who dares to change the world with his breakthrough ideas.</p>
           <br>
-          <p class="bottom-feed2">Innovator | Techie | Humanitarian</p>
+          <p class="bottom-feed2"><b>Innovator | Techie | Humanitarian</b></p>
 
         </div>
       </div>
@@ -113,9 +117,9 @@
           <h5 class="card-title">DiGiWoT Inc</h5>
           <p class="card-text">
             <b>DIGIWOT Inc.</b>“数字世界贸易与技术”专注于“数字化世界”，提供最佳的消费体验，以最实惠的价格和最优质的品质提供所有产品。</p>
-          <p>请继续关注更新。 将于2018年8月1日生效。 </p>
+          <p>请继续关注更新。<b> 将于2018年8月1日生效。</b> </p>
           <br>
-          <p class="bottom-feed3">尼泊尔| 印度| 中国</p>
+          <p class="bottom-feed3"><b>尼泊尔| 印度| 中国</b></p>
 
         </div>
       </div>
@@ -149,10 +153,10 @@
     <br>
     <h4 class="col-12 text-center ">Reach Out To Us For Any Queries 24*7.</h4>
     <br>
-    <h4 class="col-12 text-center ">DIGIWOT INC.</h4>
-    <p class="col-12 text-center small-text">Guwahati, Assam, India</p>
+    <h4 class="col-12 text-center ">DIGIWOT INC. PVT. LTD.</h4>
+    <p class="col-12 text-center small-text">Kathmandu, Nepal</p>
     <p class="col-12 text-center small-text">+91-99444 92910 || project.secret18@gmail.com</p>
-    <button type="button" class="btn btn-danger contact-us-button margin-auto bold" (click)="gotoSignup()"> Sign Up</button>
+    <button type="button" class="btn contact-us-button margin-auto bold" (click)="gotoSignup()"> Sign Up</button>
 
   </div>
 </div>

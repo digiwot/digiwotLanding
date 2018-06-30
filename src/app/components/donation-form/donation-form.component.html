@@ -1,0 +1,55 @@
+<div class="container-fluid donate-form-contaier" *ngIf="!isUserDetailsProvided">
+  <div class="row">
+    <div class="col-12 col-sm-2"></div>
+    <div class="col-12 col-sm-8">
+      <div class="form-container">
+        <div class="form-head-container">
+          <h1>Donation Form</h1>
+          <p>Thanks for donating to our cause.</p>
+        </div>
+        <div class="form-body-container">
+          <form>
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="jason smith" required #name="ngModel"
+                [(ngModel)]="user.name" name="name">
+              <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                <div *ngIf="name.errors.required">This field is required.</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email address *</label>
+              <input type="email" id="email" name="email" class="form-control" required [(ngModel)]="user.email" #email="ngModel" placeholder="john@gmail.com"
+                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                <div *ngIf="email.errors.required">Email is required.</div>
+                <div *ngIf="email.errors && email.errors.pattern">Email is invalid</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="amount">How much would you like to donate? *</label>
+              <input type="number" class="form-control" id="amount" aria-describedby="amount-help" placeholder="Enter amount" required
+                #amount="ngModel" [(ngModel)]="user.amount" name="amount">
+              <small id="amount-help" class="form-text text-muted">NPR</small>
+              <div *ngIf="amount.invalid && (amount.dirty || amount.touched)" class="alert alert-danger">
+                <div *ngIf="amount.errors.required">Please enter an amount.</div>
+              </div>
+              <div *ngIf="(amount.dirty || amount.touched || user.amount) && user.amount<=0 " class="alert alert-danger">
+                <div> Amount should be 1 or more.</div>
+              </div>
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" required [(ngModel)]="user.isAgree" value="user.isAgree"
+                name="agree">
+              <label class="form-check-label" for="exampleCheck1">I agree to make a donation, and proceed to pay.*</label>
+            </div>
+            <button type="submit" class="btn contact-us-button" (click)="validateAndGotoDonationMethods()">Proceed</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-2"></div>
+  </div>
+</div>
+<app-donate *ngIf="isUserDetailsProvided"></app-donate>

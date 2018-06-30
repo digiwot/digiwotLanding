@@ -8,6 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResetPasswordComponent implements OnInit {
 
+  user = {
+    email: '',
+    oldPwd: '',
+    newPwd: '',
+    cNewPwd: ''
+  };
   constructor(private route: Router) { }
 
   ngOnInit() {
@@ -15,5 +21,9 @@ export class ResetPasswordComponent implements OnInit {
 
   gotoMainHomePage() {
     this.route.navigate(['/']);
+  }
+
+  resetPassword() {
+    console.log(this.user);
   }
 }

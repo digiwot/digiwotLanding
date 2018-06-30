@@ -1,0 +1,45 @@
+.donate-form-contaier{
+    background-image: url('../../../assets/images/crowd-funding-background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.form-container{
+    border: 1px solid #c38d8d;
+    box-shadow: 1px 1px 1px 1px #a7a7a7e8;
+    z-index: 20;
+    margin: 150px 10px;
+    font-family: "Lucida Console", Monaco, monospace;
+    word-spacing: -4px;
+    background-color: white;
+
+}
+
+.form-head-container{
+    // height: 150px;
+    // background: linear-gradient(135.11deg, #a00f16 0%, #5b87bd 100%);
+    background: linear-gradient(135.11deg, #31d6bf 0%, #3e6ca5 100%);
+    padding: 20px;
+    color: white;
+    
+}
+
+.form-body-container{
+    padding: 25px;
+}
+.contact-us-button{
+    margin: 10px;
+    padding: 10px;
+    background: #3897f0;
+    border-color: #3897f0;
+    color: #fff;
+}
+.contact-us-button :focus{
+    border-color: #3897f0;
+}
+.contact-us-button:not(:disabled):not(.disabled):active{
+    opacity: 0.8;
+}
+.form-control, .btn{
+    border-radius: 0;
+}
