@@ -13,8 +13,12 @@ export class CustomerSignupComponent implements OnInit {
     email: '',
     password: '',
     confirmPassword: '',
-    contactNumber: ''
+    contactNumber: '',
+    countryCode: '00977'
   };
+
+  countryCodes = ['00977', '0091', '0086'];
+
   constructor() { }
 
   ngOnInit() {

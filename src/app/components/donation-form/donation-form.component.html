@@ -8,7 +8,7 @@
           <p>Thanks for donating to our cause.</p>
         </div>
         <div class="form-body-container">
-          <form>
+          <form #donationForm="ngForm" (submit)="validateAndGotoDonationMethods()">
             <div class="form-group">
               <label for="name">Full Name *</label>
               <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="jason smith" required #name="ngModel"
@@ -44,7 +44,9 @@
                 name="agree">
               <label class="form-check-label" for="exampleCheck1">I agree to make a donation, and proceed to pay.*</label>
             </div>
-            <button type="submit" class="btn contact-us-button" (click)="validateAndGotoDonationMethods()">Proceed</button>
+            <!-- <button type="submit" class="btn contact-us-button" (click)="validateAndGotoDonationMethods()">Proceed</button> -->
+            <button type="submit" class="btn contact-us-button p-2" [disabled]="!donationForm.form.valid">Proceed</button>
+            <button type="button" class="btn btn-secondary p-2" (click)="gotoHomePage()">Cancel</button>
           </form>
         </div>
       </div>

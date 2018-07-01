@@ -6,92 +6,208 @@
         <div class="signup-box-header">
           Merchant account sign up
         </div>
-        <form>
+        <form #merchantSignupForm="ngForm" (onSubmit)="signup()">
           <div class="form-group">
             <label for="name">Your full name</label>
-            <input type="text" class="form-control" id="name">
+            <input type="text" id="name" name="name" class="form-control" required [(ngModel)]="user.name" #name="ngModel" placeholder="Your name">
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+              <div *ngIf="name.errors.required">Name is required.</div>
+            </div>
           </div>
           <div class="form-group">
             <label for="displayName">Display name</label>
-            <input type="text" class="form-control" id="display-name">
+            <input type="text" id="displayName" name="displayName" class="form-control" required [(ngModel)]="user.displayName" #displayName="ngModel"
+              placeholder="Display Name">
+            <div *ngIf="displayName.invalid && (displayName.dirty || displayName.touched)" class="alert alert-danger">
+              <div *ngIf="displayName.errors.required">Display Name is required.</div>
+            </div>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            <input type="email" id="email" name="email" class="form-control" required [(ngModel)]="user.email" #email="ngModel" placeholder="john@gmail.com"
+              pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+              <div *ngIf="email.errors.required">Email is required.</div>
+              <div *ngIf="email.errors && email.errors.pattern">Email is invalid</div>
+            </div>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <input type="password" class="form-control" id="password" minlength="6" placeholder="Password" required #password="ngModel"
+              name="password" [(ngModel)]="user.password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{6,}$">
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+              <div *ngIf="password.errors.required">Password is required.</div>
+              <div *ngIf="password.errors.minlength">Password must be at least 6 characters long. </div>
+              <div *ngIf="password.errors && password.errors.pattern">Password should contain Minimum 6 characters, at least 1 uppercase letter, 1 lowercase letter, 1 number and
+                1 of #$^+=!*()@%&</div>
+            </div>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword2">Confirm Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword2">
+            <input type="password" class="form-control" id="cpassword" placeholder="Repeat Password" required #cpassword="ngModel" name="cpassword"
+              [(ngModel)]="user.confirmPassword" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{6,}$">
+            <div *ngIf="cpassword.invalid && (cpassword.dirty || cpassword.touched)  && !cpassword.errors.pattern" class="alert alert-danger">
+              <div *ngIf="cpassword.errors.required"> Password is required.</div>
+            </div>
+            <div *ngIf="(cpassword.dirty || cpassword.touched) && (user.confirmPassword != user.password) && user.confirmPassword" class="alert alert-danger">
+              <div> Password is not matching.</div>
+            </div>
           </div>
 
           <div class="form-group">
             <label for="address">Address</label>
-            <input type="text" class="form-control" id="address">
+            <input type="text" id="address" name="address" class="form-control" required [(ngModel)]="user.address" #address="ngModel"
+              placeholder="Display Name">
+            <div *ngIf="address.invalid && (address.dirty || address.touched)" class="alert alert-danger">
+              <div *ngIf="address.errors.required">Address is required.</div>
+            </div>
           </div>
           <div class="form-group">
             <label for="addressLine2">Address Line 2</label>
-            <input type="text" class="form-control" id="address-line2">
+            <input type="text" class="form-control" id="address-line2" [(ngModel)]="user.address" name="address2" placeholder="Address Line 2">
           </div>
           <div class="form-group">
             <label for="city">City/Town</label>
-            <input type="text" class="form-control" id="city">
+            <input type="text" id="city" name="city" class="form-control" required [(ngModel)]="user.city" #city="ngModel" placeholder="City">
+            <div *ngIf="city.invalid && (city.dirty || city.touched)" class="alert alert-danger">
+              <div *ngIf="city.errors.required">City is required.</div>
+            </div>
           </div>
           <div class="form-group">
             <label for="companyName">Company Name</label>
-            <input type="text" class="form-control" id="companyName">
+            <input type="text" id="companyName" name="companyName" class="form-control" required [(ngModel)]="user.companyName" #companyName="ngModel"
+              placeholder="Company Name">
+            <div *ngIf="companyName.invalid && (companyName.dirty || companyName.touched)" class="alert alert-danger">
+              <div *ngIf="companyName.errors.required">Company Name is required.</div>
+            </div>
           </div>
 
           <div class="form-group">
             <label for="state">State/Province/Region</label>
-            <input type="text" class="form-control" id="state">
+            <input type="text" id="state" name="state" class="form-control" required [(ngModel)]="user.state" #state="ngModel" placeholder="State">
+            <div *ngIf="state.invalid && (state.dirty || state.touched)" class="alert alert-danger">
+              <div *ngIf="state.errors.required">State is required.</div>
+            </div>
           </div>
           <div class="form-group">
             <label for="zip">Zip</label>
-            <input type="number" class="form-control" id="zip" maxlength="6">
+            <input type="number" id="zip" name="zip" maxlength="6" class="form-control" required [(ngModel)]="user.zip" #zip="ngModel"
+              placeholder="zip">
+            <div *ngIf="zip.invalid && (zip.dirty || zip.touched)" class="alert alert-danger">
+              <div *ngIf="zip.errors.required">Zip is required.</div>
+            </div>
           </div>
           <div class="form-group">
             <label for="country">Country</label>
-            <select class="custom-select" [(ngModel)]="selectedCountry" name="country">
+            <select class="custom-select" [(ngModel)]="user.country" name="country" required #country="ngModel">
               <option selected>--not selected--</option>
               <option *ngFor="let country of countries" [value]="country">{{country}}</option>
             </select>
+            <div *ngIf="user.country =='--not selected--' && (country.dirty || country.touched)" class="alert alert-danger">
+              <div>Select your country.</div>
+            </div>
           </div>
           <!-- if country is india -->
           <div class="form-group">
             <label for="Pan">PAN No</label>
-            <input type="text" class="form-control" id="panNo">
+            <input type="text" id="pan" name="pan" class="form-control" required [(ngModel)]="user.pan" #pan="ngModel" placeholder="PAN">
+            <div *ngIf="pan.invalid && (pan.dirty || pan.touched)" class="alert alert-danger">
+              <div *ngIf="pan.errors.required">PAN is required.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="reg">Reg. No</label>
+            <input type="text" id="reg" name="reg" class="form-control" required [(ngModel)]="user.regNo" #reg="ngModel" placeholder="Reg">
+            <div *ngIf="reg.invalid && (reg.dirty || reg.touched)" class="alert alert-danger">
+              <div *ngIf="reg.errors.required">Reg no. is required.</div>
+            </div>
+          </div>
+          <div class="form-group" *ngIf="user.country=='Nepal'">
+            <label for="vat">VAT No</label>
+            <input type="text" id="vat" name="vat" class="form-control" required [(ngModel)]="user.vatNo" #vat="ngModel" placeholder="VAT no.">
+            <div *ngIf="vat.invalid && (vat.dirty || vat.touched)" class="alert alert-danger">
+              <div *ngIf="vat.errors.required">VAT no. is required.</div>
+            </div>
+          </div>
+          <div class="form-group" *ngIf="user.country=='India'">
+              <label for="gst">GST No</label>
+              <input type="text" id="gst" name="gst" class="form-control" required [(ngModel)]="user.gstNo" #gst="ngModel" placeholder="GST no.">
+              <div *ngIf="gst.invalid && (gst.dirty || gst.touched)" class="alert alert-danger">
+                <div *ngIf="gst.errors.required">GST no. is required.</div>
+              </div>
+            </div>
+          <div class="form-group" *ngIf="user.country=='Nepal' || user.country=='India'">
+            <label for="exim">Exim Code</label>
+            <input type="text" id="exim" name="exim" class="form-control" required [(ngModel)]="user.eximCode" #exim="ngModel" placeholder="Exim code">
+            <div *ngIf="exim.invalid && (exim.dirty || exim.touched)" class="alert alert-danger">
+              <div *ngIf="exim.errors.required">Exim code is required.</div>
+            </div>
           </div>
           <div class="form-group">
             <label for="contactNumber">Contact number</label>
-            <input type="tel" class="form-control" id="contact-number" placeholder="+977 9801234567">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1" *ngIf="user.country=='India'">0091</span>
+                <span class="input-group-text" id="basic-addon1" *ngIf="user.country=='Nepal' || user.country=='--not selected--'">00977</span>
+                <span class="input-group-text" id="basic-addon1" *ngIf="user.country=='China'">0086</span>
+              </div>
+              <input type="tel" class="form-control" id="contactNumber" minlength="10" maxlength="10" name="contactNumber" placeholder="9801234567"
+                required #contactNumber="ngModel" [(ngModel)]="user.contactNumber" pattern="[0-9]*">
+            </div>
+            <div *ngIf="contactNumber.invalid && (contactNumber.dirty || contactNumber.touched)" class="alert alert-danger">
+              <div *ngIf="contactNumber.errors.required"> Contact number is required.</div>
+              <div *ngIf="contactNumber.errors && contactNumber.errors.pattern"> Invalid contact number.</div>
+              <div *ngIf="contactNumber.errors.minlength || contactNumber.errors.maxlength"> Should be of 10 digits long.</div>
+            </div>
+          </div>
+          <div class="form-group" *ngIf="user.country=='Nepal'">
+            <label for="turnOver">Annual Turn Over</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">INR</span>
+              </div>
+              <select class="custom-select" [(ngModel)]="user.turnOver" name="turnOver" required #turnOver="ngModel">
+                <option selected>--not selected--</option>
+                <option *ngFor="let turnOver of turnOvers" [value]="turnOver">{{turnOver}}</option>
+              </select>
+            </div>
+            <div *ngIf="user.turnOver =='--not selected--' && (turnOver.dirty || turnOver.touched)" class="alert alert-danger">
+              <div>Select your annual turn over.</div>
+            </div>
           </div>
           <div class="form-group">
             <label for="mainProductCategory">Main Product Category</label>
-            <select class="custom-select" [(ngModel)]="selectedMainProduct" name="mainProduct">
+            <select class="custom-select" [(ngModel)]="user.mainProduct" name="mainProduct" required #mainProduct="ngModel">
               <option selected>--not selected--</option>
               <option *ngFor="let mainProduct of mainProductCategories" [value]="mainProduct">{{mainProduct}}</option>
             </select>
+            <div *ngIf="user.mainProduct =='--not selected--' && (mainProduct.dirty || mainProduct.touched)" class="alert alert-danger">
+              <div>Select your main product you sell.</div>
+            </div>
           </div>
+
           <div class="form-group">
-            <label for="noOfProducts">Number of products you want to sell</label>
-            <select class="custom-select" [(ngModel)]="selectedNoOfProducts" name="noOfProducts">
+            <label for="noOfProd">Number of products you want to sell</label>
+            <select class="custom-select" [(ngModel)]="user.noOfProd" name="noOfProd" required #noOfProd="ngModel">
               <option selected>--not selected--</option>
-              <option *ngFor="let noOfProduct of noOfProducts" [value]="noOfProduct">{{noOfProduct}}</option>
+              <option *ngFor="let product of noOfProducts" [value]="product">{{product}}</option>
             </select>
+            <div *ngIf="user.noOfProd =='--not selected--' && (noOfProd.dirty || noOfProd.touched)" class="alert alert-danger">
+              <div>Select number of products you sell.</div>
+            </div>
           </div>
+
           <div class="form-group">
             <label for="brandOwner">Do you own any brand for the product you are selling?</label>
-            <select class="custom-select" [(ngModel)]="selectedOwningProduct" name="ownedProduct">
+            <select class="custom-select" [(ngModel)]="user.owningProduct" name="ownedProduct" required #owningProduct="ngModel">
               <option selected>--not selected--</option>
               <option *ngFor="let owningProduct of owningProducts" [value]="owningProduct">{{owningProduct}}</option>
             </select>
+            <div *ngIf="user.owningProduct =='--not selected--' && (owningProduct.dirty || owningProduct.touched)" class="alert alert-danger">
+              <div>Select your main product you sell.</div>
+            </div>
           </div>
-          <button type="submit" class="btn btn-danger submit-button" (click)="signup()">Sign up</button>
+          <button type="submit" class="btn btn-danger submit-button" [disabled]="!merchantSignupForm.form.valid">Sign up</button>
           <button type="button" class="btn btn-secondary" (click)="gotoMainSignupPage()">Cancel</button>
           <br>
           <p class="existing-accout">

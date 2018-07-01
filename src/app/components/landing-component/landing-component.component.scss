@@ -66,7 +66,7 @@
     text-align: center;
 }
 .about-us-text{
-    color: black;
+    color: #296cab;
     text-align: center;
     width: 100%;
     font-size: 40px;
@@ -95,7 +95,7 @@
 }
 
 .subscription-container{
-    background-color: rgb(210, 47, 37);
+    background: linear-gradient(135.11deg, #31d6bf 0%, #3e6ca5 100%);
     color: white;
     margin-top: 10px;
     margin-bottom: 10px; 
@@ -136,7 +136,7 @@
 .bottom-feed2{
     bottom: 0px;
     position: absolute;
-    left: 32px;
+    left: 18px;
 }
 .bottom-feed3{
     bottom: 0px;
@@ -145,17 +145,17 @@
 }
 
 .contact-us-header{
-    color: red;
+    color: #296cab;
     text-align: center;
     text-transform: uppercase;
-    margin: 50px auto;
-    font-family: 'Playfair Display', Georgia, serif;
+    margin: 40px auto;
+    // font-family: 'Playfair Display', Georgia, serif;
     font-size: 40px;
 
 }
 .contact-container{
     line-height: 35px;
-    font-family: 'Open Sans', arial, sans-serif;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     margin-bottom: 10px;
 }
 .margin-auto{
@@ -167,6 +167,7 @@
 .small-text{
     font-size: 16px;;
     color: gray;
+    margin-bottom: 0px;
 }
 
 .score-box-div{
@@ -225,6 +226,17 @@
     color: white;
     padding: 10px;
 }
+.map{
+    background-image: url('../../../assets/images/map.png');
+    color: white;
+    font-family: "din","Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 300px;
+    margin: 0;
+
+}
 @media (max-width: 767.98px) { 
     
     .subs-text{
@@ -243,3 +255,16 @@
     }
 
  }
+.hd-bg{
+    padding: 10px;
+    border: 1px solid #ceceec;
+    background: linear-gradient(135.11deg, #aef9ee 0%, #ff91b0 100%);
+    border-radius: 10px;
+}
+.about-us-bg{
+    background: linear-gradient(135.11deg, #31d6bf 0%, #3e6ca5 100%);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #dcdce0;
+}

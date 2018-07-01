@@ -15,7 +15,7 @@ export class DonationFormComponent implements OnInit {
     isAgree: false
   };
   isUserDetailsProvided = false;
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit() {
   }
@@ -27,4 +27,7 @@ export class DonationFormComponent implements OnInit {
 
   }
 
+  gotoHomePage() {
+    this.route.navigate(['/']);
+  }
 }

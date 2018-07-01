@@ -12,11 +12,39 @@ export class MerchantSignupComponent implements OnInit {
   mainProductCategories = ['Apparel & Accessories', 'Arts & Entertainment'];
   owningProducts = ['shikhar', 'nokia'];
   noOfProducts = ['0-25', '26-100', '101-1000'];
+  turnOvers = ['<50000', '50000-500000', '>500000'];
 
-  selectedCountry = '--not selected--';
-  selectedMainProduct = '--not selected--';
-  selectedOwningProduct = '--not selected--';
-  selectedNoOfProducts = '--not selected--';
+  // selectedCountry = '--not selected--';
+  // selectedMainProduct = '--not selected--';
+  // selectedOwningProduct = '--not selected--';
+  // selectedNoOfProducts = '--not selected--';
+
+  user = {
+    country: 'Nepal',
+    mainProduct: '--not selected--',
+    owningProduct: '--not selected--',
+    noOfProd: '--not selected--',
+    name: '',
+    email: '',
+    displayName: '',
+    password: '',
+    cPassword: '',
+    address: '',
+    address2: '',
+    city: '',
+    state: '',
+    companyName: '',
+    panNo: '',
+    contactNo: '',
+    regNo: '',
+    vatNo: '',
+    turnOver: '--not selected--',
+    eximCode: '',
+    gstNo: '',
+    countryCode: '00977'
+  };
+
+  countryCodes = ['00977', '0091', '0086'];
 
   constructor() { }
 
@@ -28,7 +56,7 @@ export class MerchantSignupComponent implements OnInit {
   }
 
   signup() {
-    console.log('country: ' + this.selectedCountry);
+    console.log(this.user);
   }
 
 }

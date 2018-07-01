@@ -13,8 +13,10 @@ export class JobseekerSignupComponent implements OnInit {
     email: '',
     password: '',
     confirmPassword: '',
-    contactNumber: ''
+    countryCode: '00977'
   };
+
+  countryCodes = ['00977', '0091', '0086'];
   constructor() { }
 
   ngOnInit() {
