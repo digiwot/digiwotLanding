@@ -26,7 +26,13 @@
 
 }
 .navbar-right li>a{
-    padding: 5px;
+    border-radius: 30px;
+    margin: 5px;
+    background: #29bdca;
+    padding: 5px 14px;
+}
+.navbar-right li>a:hover{
+    background: #0ea4b1c9;
 }
 .navbar-light{
     border-bottom: 1px solid gray;
@@ -41,13 +47,24 @@
 }
 
 .nav-item :hover{
-    background-color: #d8d8d8;
+    // background: #0ea4b1c9;
+    // // border: 1px solid white;
+    // border-radius: 30px;
+    // padding: 1px 7px;
+    
 }
+
+// .nav-item{
+//     border-radius: 30px;
+//     margin: 5px;
+//     background: #29bdca;
+//     padding: 1px 7px;
+// }
 
 @media (min-width: 992px)  { 
     .navbar-right{
         float: right;
-        margin-left: 71%;
+        margin-left: 63%;
         font-size: 18px;
     }
 }
