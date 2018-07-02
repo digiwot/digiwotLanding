@@ -13,10 +13,12 @@ export class JobseekerSignupComponent implements OnInit {
     email: '',
     password: '',
     confirmPassword: '',
-    countryCode: '00977'
+    countryCode: '00977',
+    resumeFileName: ''
   };
 
   countryCodes = ['00977', '0091', '0086'];
+  uploadFileName: string;
   constructor() { }
 
   ngOnInit() {
@@ -29,4 +31,16 @@ export class JobseekerSignupComponent implements OnInit {
   jobSeekerSignup() {
     console.log(this.user);
   }
+  // uploadFile() {
+  //   let fullPath = document.getElementById('upload').baseURI;
+  //   console.log(fullPath);
+  //   if (fullPath) {
+  //     let startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+  //     let filename = fullPath.substring(startIndex);
+  //     if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+  //         filename = filename.substring(1);
+  //     }
+  //     this.uploadFileName = filename;
+  // }
+  // }
 }

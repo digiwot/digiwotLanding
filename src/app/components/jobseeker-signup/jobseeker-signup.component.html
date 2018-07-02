@@ -1,50 +1,51 @@
 <div class="row full-height">
-    <div class="col-md-3 col-lg-3"></div>
-    <div class="col-sm-12 col-md-6 col-lg-6 text-center">
-      <div class="sign-up-box">
-        <div class="button-continer col-12 col-sm-10 align-middle">
-          <div class="signup-box-header">
-            Sign up for job seeker account
+  <div class="col-md-3 col-lg-3"></div>
+  <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+    <div class="sign-up-box">
+      <div class="button-continer col-12 col-sm-10 align-middle">
+        <div class="signup-box-header">
+          Sign up for job seeker account
+        </div>
+        <form (ngSubmit)="jobSeekerSignup()" #jobSeekerSignupForm="ngForm">
+          <div class="form-group">
+            <label for="name">Your full name</label>
+            <input type="text" id="name" name="name" class="form-control" required [(ngModel)]="user.name" #name="ngModel" placeholder="Your name">
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+              <div *ngIf="name.errors.required">Name is required.</div>
+            </div>
           </div>
-          <form (ngSubmit)="jobSeekerSignup()" #jobSeekerSignupForm="ngForm">
-              <div class="form-group">
-                <label for="name">Your full name</label>
-                <input type="text" id="name" name="name" class="form-control" required [(ngModel)]="user.name" #name="ngModel" placeholder="Your name">
-                <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
-                  <div *ngIf="name.errors.required">Name is required.</div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" id="email" name="email" class="form-control" required [(ngModel)]="user.email" #email="ngModel" placeholder="john@gmail.com"
-                  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
-                <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
-                  <div *ngIf="email.errors.required">Email is required.</div>
-                  <div *ngIf="email.errors && email.errors.pattern">Email is invalid</div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" minlength="6" placeholder="Password" required #password="ngModel"
-                  name="password" [(ngModel)]="user.password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{6,}$">
-                <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
-                  <div *ngIf="password.errors.required">Password is required.</div>
-                  <div *ngIf="password.errors.minlength">Password must be at least 6 characters long. </div>
-                  <div *ngIf="password.errors && password.errors.pattern">Password should contain Minimum 6 characters, at least 1 uppercase letter, 1 lowercase letter, 1 number and 1 of #$^+=!*()@%&</div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="cpassword">Confirm Password</label>
-                <input type="password" class="form-control" id="cpassword" placeholder="Repeat Password" required #cpassword="ngModel" name="cpassword"
-                  [(ngModel)]="user.confirmPassword" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{6,}$">
-                <div *ngIf="cpassword.invalid && (cpassword.dirty || cpassword.touched)  && !cpassword.errors.pattern" class="alert alert-danger">
-                  <div *ngIf="cpassword.errors.required"> Password is required.</div>
-                </div>
-                <div *ngIf="(cpassword.dirty || cpassword.touched) && (user.confirmPassword != user.password) && user.confirmPassword" class="alert alert-danger">
-                  <div> Password is not matching.</div>
-                </div>
-              </div>
-              <!-- <div class="form-group">
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" class="form-control" required [(ngModel)]="user.email" #email="ngModel" placeholder="john@gmail.com"
+              pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+              <div *ngIf="email.errors.required">Email is required.</div>
+              <div *ngIf="email.errors && email.errors.pattern">Email is invalid</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" minlength="6" placeholder="Password" required #password="ngModel"
+              name="password" [(ngModel)]="user.password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{6,}$">
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+              <div *ngIf="password.errors.required">Password is required.</div>
+              <div *ngIf="password.errors.minlength">Password must be at least 6 characters long. </div>
+              <div *ngIf="password.errors && password.errors.pattern">Password should contain Minimum 6 characters, at least 1 uppercase letter, 1 lowercase letter, 1 number and
+                1 of #$^+=!*()@%&</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cpassword">Confirm Password</label>
+            <input type="password" class="form-control" id="cpassword" placeholder="Repeat Password" required #cpassword="ngModel" name="cpassword"
+              [(ngModel)]="user.confirmPassword" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{6,}$">
+            <div *ngIf="cpassword.invalid && (cpassword.dirty || cpassword.touched)  && !cpassword.errors.pattern" class="alert alert-danger">
+              <div *ngIf="cpassword.errors.required"> Password is required.</div>
+            </div>
+            <div *ngIf="(cpassword.dirty || cpassword.touched) && (user.confirmPassword != user.password) && user.confirmPassword" class="alert alert-danger">
+              <div> Password is not matching.</div>
+            </div>
+          </div>
+          <!-- <div class="form-group">
                 <label for="contactNumber">Contact number</label>
                 <input type="tel" class="form-control" id="contactNumber" minlength="10" maxlength="10" name="contactNumber" placeholder="+977 9801234567"
                   required #contactNumber="ngModel" [(ngModel)]="user.contactNumber" pattern="[0-9]*">
@@ -54,33 +55,39 @@
                   <div *ngIf="contactNumber.errors.minlength || contactNumber.errors.maxlength"> Should be of 10 digits long.</div>
                 </div>
               </div> -->
-              <div class="form-group">
-                  <label for="contactNumber">Contact number</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <select class="custom-select" [(ngModel)]="user.countryCode" name="countryCode">
-                        <option *ngFor="let countryCode of countryCodes" [value]="countryCode">{{countryCode}}</option>
-                      </select>
-                    </div>
-                    <input type="tel" class="form-control" id="contactNumber" minlength="10" maxlength="10" name="contactNumber" placeholder="9801234567"
-                      required #contactNumber="ngModel" [(ngModel)]="user.contactNumber" pattern="[0-9]*">
-                  </div>
-                  <div *ngIf="contactNumber.invalid && (contactNumber.dirty || contactNumber.touched)" class="alert alert-danger">
-                    <div *ngIf="contactNumber.errors.required"> Contact number is required.</div>
-                    <div *ngIf="contactNumber.errors && contactNumber.errors.pattern"> Invalid contact number.</div>
-                    <div *ngIf="contactNumber.errors.minlength || contactNumber.errors.maxlength"> Should be of 10 digits long.</div>
-                  </div>
-                </div>
-              <button type="submit" class="btn btn-danger submit-button" [disabled]="!jobSeekerSignupForm.form.valid">Sign up</button>
-              <button type="button" class="btn btn-secondary" (click)="gotoMainSignupPage()">Cancel</button>
-              <br>
-              <p class="existing-accout">
-                <a href="/login">Have an account already! Login</a>
-              </p>
-            </form>
-        </div>
+          <div class="form-group">
+            <label for="contactNumber">Contact number</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <select class="custom-select" [(ngModel)]="user.countryCode" name="countryCode">
+                  <option *ngFor="let countryCode of countryCodes" [value]="countryCode">{{countryCode}}</option>
+                </select>
+              </div>
+              <input type="tel" class="form-control" id="contactNumber" minlength="10" maxlength="10" name="contactNumber" placeholder="9801234567"
+                required #contactNumber="ngModel" [(ngModel)]="user.contactNumber" pattern="[0-9]*">
+            </div>
+            <div *ngIf="contactNumber.invalid && (contactNumber.dirty || contactNumber.touched)" class="alert alert-danger">
+              <div *ngIf="contactNumber.errors.required"> Contact number is required.</div>
+              <div *ngIf="contactNumber.errors && contactNumber.errors.pattern"> Invalid contact number.</div>
+              <div *ngIf="contactNumber.errors.minlength || contactNumber.errors.maxlength"> Should be of 10 digits long.</div>
+            </div>
+          </div>
+          <!-- <div class="form-group">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="upload" (ngModelChange)="uploadFile()" [(ngModel)]="user.resumeFileName" name="resumeFileName">
+              <label class="custom-file-label" for="upload" >{{uploadFileName}}</label>
+            </div>
+          </div> -->
+          <button type="submit" class="btn btn-danger submit-button" [disabled]="!jobSeekerSignupForm.form.valid">Sign up</button>
+          <button type="button" class="btn btn-secondary" (click)="gotoMainSignupPage()">Cancel</button>
+          <br>
+          <p class="existing-accout">
+            <a href="/login">Have an account already! Login</a>
+          </p>
+        </form>
       </div>
     </div>
-    <div class="col-md-3 col-lg-3"></div>
-  
   </div>
+  <div class="col-md-3 col-lg-3"></div>
+
+</div>

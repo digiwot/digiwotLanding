@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  warning_baner_content = 'Get 10% off on launch "August 1, 2018" when you signup now. Like Facebook page.';
+  warning_baner_content = '';
 
   constructor() { }
 

@@ -20,10 +20,10 @@ export class LandingComponentComponent implements OnInit {
   hours;
   minutes;
   seconds;
-  noOfRegCustomers = 857;
-  noOfRegMerchants = 21;
-  noOfRegJobSeekers = 63;
-  noOfDoners = 13;
+  noOfRegCustomers = 103;
+  noOfRegMerchants = 7;
+  noOfRegJobSeekers = 21;
+  noOfDoners = 6;
 
   timeDiff = new Date().getTime() - new Date('Jul 1, 2018 00:00:00').getTime();
 

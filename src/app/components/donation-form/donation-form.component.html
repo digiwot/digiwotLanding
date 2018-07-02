@@ -31,7 +31,7 @@
               <label for="amount">How much would you like to donate? *</label>
               <input type="number" class="form-control" id="amount" aria-describedby="amount-help" placeholder="Enter amount" required
                 #amount="ngModel" [(ngModel)]="user.amount" name="amount">
-              <small id="amount-help" class="form-text text-muted">NPR</small>
+              <small id="amount-help" class="form-text text-muted">USD $</small>
               <div *ngIf="amount.invalid && (amount.dirty || amount.touched)" class="alert alert-danger">
                 <div *ngIf="amount.errors.required">Please enter an amount.</div>
               </div>

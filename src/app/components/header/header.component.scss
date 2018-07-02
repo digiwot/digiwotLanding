@@ -10,7 +10,7 @@
     background-color: rgb(210, 47, 37);
     transition: all 0.5s;
     display: block;
-    font-family: 'Playfair Display', Georgia, serif;
+    // font-family: 'Playfair Display', Georgia, serif;
     text-align: center;
 
 }
@@ -30,6 +30,8 @@
     margin: 5px;
     background: #29bdca;
     padding: 5px 14px;
+    min-width: 88px;
+    text-align: center;
 }
 .navbar-right li>a:hover{
     background: #0ea4b1c9;
