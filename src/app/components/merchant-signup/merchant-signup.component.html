@@ -45,11 +45,11 @@
           <div class="form-group">
             <label for="exampleInputPassword2">Confirm Password</label>
             <input type="password" class="form-control" id="cpassword" placeholder="Repeat Password" required #cpassword="ngModel" name="cpassword"
-              [(ngModel)]="user.confirmPassword" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{6,}$">
+              [(ngModel)]="user.cPassword" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{6,}$">
             <div *ngIf="cpassword.invalid && (cpassword.dirty || cpassword.touched)  && !cpassword.errors.pattern" class="alert alert-danger">
               <div *ngIf="cpassword.errors.required"> Password is required.</div>
             </div>
-            <div *ngIf="(cpassword.dirty || cpassword.touched) && (user.confirmPassword != user.password) && user.confirmPassword" class="alert alert-danger">
+            <div *ngIf="(cpassword.dirty || cpassword.touched) && (user.cPassword != user.password) && user.cPassword" class="alert alert-danger">
               <div> Password is not matching.</div>
             </div>
           </div>

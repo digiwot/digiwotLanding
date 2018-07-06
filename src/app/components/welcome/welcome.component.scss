@@ -1,0 +1,25 @@
+.heading{
+
+}
+.description{
+    text-transform: capitalize;
+    text-decoration: underline;
+    
+}
+.welcome-container{
+    background-image: url('../../../assets/images/welcome-background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 98vh;
+    color: white;
+    text-align: center;
+}
+.msg-box{
+    margin: 20% auto;
+}
+.test-anim{
+    height: 200px;
+    width: 200px;
+    margin: auto;
+    border: 1px solid;
+}

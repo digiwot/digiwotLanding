@@ -76,4 +76,8 @@ gotoDonate() {
   this.router.navigate(['/donation']);
 }
 
+  gotoWhyDonate() {
+    this.router.navigate(['/why-donate']);
+  }
+
 }

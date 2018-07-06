@@ -41,7 +41,10 @@ export class MerchantSignupComponent implements OnInit {
     turnOver: '--not selected--',
     eximCode: '',
     gstNo: '',
-    countryCode: '00977'
+    countryCode: '00977',
+    pan: '',
+    zip: '',
+    contactNumber: ''
   };
 
   countryCodes = ['00977', '0091', '0086'];

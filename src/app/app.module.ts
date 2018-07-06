@@ -29,16 +29,21 @@ import { DonatePageComponent } from './pages/donate-page/donate-page.component';
 import { DonateComponent } from './components/donate/donate.component';
 import { DonationFormPageComponent } from './pages/donation-form-page/donation-form-page.component';
 import { DonationFormComponent } from './components/donation-form/donation-form.component';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 const appRoutes: Routes = [
-  { path: 'signup', component: SignUpPageComponent },
-  { path: 'login', component: LoginPageComponent },
-  { path: 'resetpassword', component: ResetPasswordPageComponent },
+  // { path: 'signup', component: SignUpPageComponent },
+  // { path: 'login', component: LoginPageComponent },
+  // { path: 'resetpassword', component: ResetPasswordPageComponent },
   { path: '', component: LandingPageComponent },
   { path: 'home', component: LandingPageComponent },
-  { path: 'welcome', component: WelcomePageComponent },
-  { path: 'donation', component: DonationFormPageComponent },
+  // { path: 'welcome', component: WelcomePageComponent },
+  // { path: 'donation', component: DonationFormPageComponent },
+  { path: 'donation', component: WelcomePageComponent },
+  { path: 'why-donate', component: WelcomePageComponent },
+  { path: 'signup', component: WelcomePageComponent },
+  { path: 'login', component: WelcomePageComponent },
   // { path: 'hero/:id',      component: HeroDetailComponent },
   // {
   //   path: 'heroes',
@@ -81,6 +86,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    // BrowserAnimationsModule,
     RouterModule.forRoot(
       appRoutes,
       // { enableTracing: true } // <-- debugging purposes only

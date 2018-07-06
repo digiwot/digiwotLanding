@@ -61,4 +61,8 @@ export class DonateComponent implements AfterViewChecked {
       document.body.appendChild(scriptElement);
     });
   }
+
+  payByRazorpay() {
+
+  }
 }

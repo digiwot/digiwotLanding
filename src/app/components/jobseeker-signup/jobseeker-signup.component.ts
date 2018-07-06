@@ -14,7 +14,8 @@ export class JobseekerSignupComponent implements OnInit {
     password: '',
     confirmPassword: '',
     countryCode: '00977',
-    resumeFileName: ''
+    resumeFileName: '',
+    contactNumber: ''
   };
 
   countryCodes = ['00977', '0091', '0086'];
