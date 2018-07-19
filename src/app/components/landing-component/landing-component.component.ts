@@ -31,7 +31,7 @@ export class LandingComponentComponent implements OnInit {
 
   constructor(private elementRef: ElementRef, private router: Router) {
     secondsCounter.subscribe(n => {
-      let countDownDate = new Date('Aug 1, 2018 00:00:00').getTime();
+      let countDownDate = new Date('Aug 31, 2018 00:00:00').getTime();
       let now = new Date().getTime();
       let distance = countDownDate - now;
       this.days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -78,6 +78,10 @@ gotoDonate() {
 
   gotoWhyDonate() {
     this.router.navigate(['/why-donate']);
+  }
+
+  subscribe() {
+
   }
 
 }

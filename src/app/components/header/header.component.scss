@@ -5,12 +5,12 @@
 }
 
 .warning-banner{
+
+
     width: 100%;
     color: white;
-    background-color: rgb(210, 47, 37);
+    background-color: #d22f25;
     transition: all 0.5s;
-    display: block;
-    // font-family: 'Playfair Display', Georgia, serif;
     text-align: center;
 
 }
@@ -69,4 +69,16 @@
         margin-left: 63%;
         font-size: 18px;
     }
+}
+
+.margin-0{
+    margin: 0;
+}
+
+.translator{
+    padding: 5px;
+    
+}
+.goog-te-gadget-simple{
+    border-radius: 14px !important;
 }

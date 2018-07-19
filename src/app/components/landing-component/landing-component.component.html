@@ -1,24 +1,52 @@
 <div class="parallax">
+    
   <div class="header-tagline">
+    
     <h1>DiGiWoT Inc.
       <br> DIGITAL WORLD OF TRADE</h1>
+      <br>
     <P>Helping You Get Things Done in Better Way.</P>
     <P>Experience "Better Life Together".</P>
-    <h3>Goes live on August 1st 2018.</h3>
+    <h2>Goes live on August 31<sup>st</sup> 2018.</h2>
+    <br>
     <a href="#contact-us">
       <button type="button" class="btn  contact-us-button">CONTACT US</button>
     </a>
     <br>
     <br>
-    <p id="demo" class="timer">
-      <span class="timer-box">{{days}}</span>Days
-      <span class="timer-box">{{hours}}</span>Hours
+    <div id="demo" class="timer">
+      <!-- <span class="timer-box">{{days}}</span> :
+      <span class="timer-box">{{hours}}</span> :
       <span class="timer-box">
-        {{minutes}}</span>Minutes
-      <span class="timer-box">{{seconds}}</span>Seconds
+        {{minutes}}</span> :
+      <span class="timer-box">{{seconds}}</span> -->
+
+      <div class="row col-12 margin-0">
+        <div class="col-md-2"></div>
+        <div class="row col-md-8 margin-0">
+          <div class="col-12 col-md-3 score-box-div">
+            <div class="col-12 timer-box">{{days}}</div>
+            <div class="col-12">Days</div>
+          </div>
+          <div class="col-12 col-md-3 score-box-div">
+            <div class="col-12 timer-box">{{hours}}</div>
+            <div class="col-12">Hours</div>
+          </div>
+          <div class="col-12 col-md-3 score-box-div">
+            <div class="col-12 timer-box">{{minutes}}</div>
+            <div class="col-12">Minutes</div>
+          </div>
+          <div class="col-12 col-md-3 score-box-div">
+            <div class="col-12 timer-box">{{seconds}}</div>
+            <div class="col-12">Seconds</div>
+          </div>
+        </div>
+        <div class="col-md-2 "></div>
+
+      </div>
 
 
-    </p>
+    </div>
   </div>
 </div>
 <div class="container-fluid scoreboard-container">
@@ -26,9 +54,9 @@
     <div class="col-12 row margin-0">
       <div class="trophy"></div>
     </div>
-    <div class="col-12 row margin-0">
+    <!-- <div class="col-12 row margin-0">
       <div class="ribbon">{{noOfDaysLive}} days</div>
-    </div>
+    </div> -->
     <div class="col-12 scoreboard-header"> registration score board</div>
   </div>
   <div class="row col-12 margin-0">
@@ -57,9 +85,9 @@
     <p class="cause-paragraph">Your support and contributions will enable us to meet our goals and improve conditions. Your generous donation will fund
       our mission.</p>
     <div class="col">
-        <button type="button" class="btn contact-us-button" (click)="gotoWhyDonate()">WHY DONATE</button>
-        <button type="button" class="btn contact-us-button" (click)="gotoDonate()">
-          <i class="fas fa-coins"></i> DONATE NOW</button>
+      <button type="button" class="btn contact-us-button" (click)="gotoWhyDonate()">WHY DONATE</button>
+      <button type="button" class="btn contact-us-button" (click)="gotoDonate()">
+        <i class="fas fa-coins"></i> DONATE NOW</button>
     </div>
     <div>
       <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/cc-badges-ppmcvdam.png" data-ux="Image" data-aid="PAYMENT_CREDIT_CARD_BADGES_RENDERED"
@@ -71,7 +99,9 @@
 
 <div class="container about-us-container">
   <div class="row text-center">
-    <div class="about-us-text"><span class="about-us-bg">About Us</span></div>
+    <div class="about-us-text">
+      <span class="about-us-bg">About Us</span>
+    </div>
   </div>
   <div class="row">
     <div class="col-lg-4 col-sm-12 col-md-12">
@@ -79,18 +109,16 @@
         <img class="card-img-top card-image" src="//img1.wsimg.com/isteam/stock/103733/:/rs=w:223,h:223,cg:true,m/cr=w:223,h:223"
           alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">DiGIWoT Inc</h5>
+          <h5 class="card-title"><b>DiGIWoT Inc</b></h5>
           <p class="card-text">
-            <b>
-              <i>DIGIWOT Inc. </i>
-            </b>"Digital World Of Trade & Technology" focused on "DIGITIZING world Together" providing best Consumer Experience
+              DIGIWOT Inc. "Digital World Of Trade & Technology" focused on "DIGITIZING world Together" providing best Consumer Experience
             delivering all products at most affordable price and best quality.
             <br>
             <b>
               <i>Stay Tuned For Updates.</i>
             </b>
             <br>Goes Live On
-            <b>August 1, 2018.</b>
+            <b>August 31, 2018.</b>
           </p>
           <br>
           <p class="bottom-feed1">
@@ -108,7 +136,7 @@
         </a>
         <div class="card-body">
           <a href="https://www.facebook.com/aakashagrawal1992">
-            <h5 class="card-title">Founder | CEO | MD</h5>
+            <h5 class="card-title"><b>Founder | CEO | MD</b></h5>
           </a>
           <p class="card-text">Nepalese-Indian Entrepreneur Aakash Agarwal is the visionary leader of DIGIWOT Inc. (Digital World Of Trade) networks.He
             is one of the few people in the world who dares to change the world with his breakthrough ideas.</p>
@@ -125,11 +153,13 @@
         <img class="card-img-top card-image" src="//img1.wsimg.com/isteam/stock/103740/:/rs=w:223,h:223,cg:true,m/cr=w:223,h:223"
           alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">DiGiWoT Inc</h5>
+          <h5 class="card-title"><b>DiGiWoT Inc</b></h5>
           <p class="card-text">
-            <b>DIGIWOT Inc.</b>“数字世界贸易与技术”专注于“数字化世界”，提供最佳的消费体验，以最实惠的价格和最优质的品质提供所有产品。</p>
-          <p>请继续关注更新。
-            <b> 将于2018年8月1日生效。</b>
+            DIGIWOT Inc.“数字世界贸易与技术”专注于“数字化世界”，提供最佳的消费体验，以最实惠的价格和最优质的品质提供所有产品。</p>
+            <br>
+            <!-- <br> -->
+          <p>请继续关注更新。<br>
+            <b> 将于2018年8月31日生效。</b>
           </p>
           <br>
           <p class="bottom-feed3">
@@ -144,10 +174,10 @@
 
 <div class="container-fluid subscription-container">
   <div class="row margin-0">
-    <div class="col-lg-4 col-md-4 col-sm-12 subs-text">
+    <div class="col-lg-4 col-md-4 col-sm-12 subs-text slideLeft">
       Join Our Mailing List
     </div>
-    <div class="col-lg-5 col-md-5 col-sm-12 subs-form">
+    <div class="col-lg-5 col-md-5 col-sm-12 subs-form slideUp">
       <form>
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
@@ -156,7 +186,7 @@
         </div>
       </form>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-12 subs-button">
+    <div class="col-lg-3 col-md-3 col-sm-12 subs-button slideRight">
       <button type="submit" class="btn btn-info">Submit</button>
     </div>
   </div>
@@ -165,18 +195,33 @@
 <div class="container-fluid contact-container" id="contact-us">
   <div class="row">
     <div class=" col-12 col-lg-6">
-      <h2 class="contact-us-header col-12"><span class="hd-bg">contact us</span></h2>
+      <h2 class="contact-us-header col-12">
+        <span class="hd-bg">contact us</span>
+      </h2>
       <br>
       <h4 class="col-12 text-center ">Reach Out To Us For Any Queries 24*7.</h4>
       <br>
       <h4 class="col-12 text-center ">DIGIWOT INC. PVT. LTD.</h4>
-      <p class="col-12 text-center small-text">Ground Floor, Trade Tower, Thapathali, <br>Kathmandu, Nepal</p>
+      <p class="col-12 text-center small-text">Ground Floor, Trade Tower, Thapathali,
+        <br>Kathmandu, Nepal</p>
       <p class="col-12 text-center small-text">
-        <i class="fas fa-phone-volume"></i> +977-9801208388</p>
+        <i class="fas fa-phone-volume"></i> +977-9801208388
+      </p>
+      <p class="text-center">
+        <a  href="mailto:info@digiwot.com" >
+          <button  class="btn btn-secondary" type="button">Mail us
+            <i  class="far fa-envelope "></i>
+          </button>
+        </a>
+      </p>
+      
+
       <p class="col-12 text-center small-text">
-        <i class="far fa-envelope"></i> info@digiwot.com</p>
+        <i class="far fa-envelope"></i> info@digiwot.com
+      </p>
       <p class="col-12 text-center small-text">
-        <i class="far fa-envelope"></i> support@digiwot.com</p>
+        <i class="far fa-envelope"></i> support@digiwot.com
+      </p>
       <!-- <button type="button" class="btn contact-us-button margin-auto bold" (click)="gotoSignup()"> Sign Up</button> -->
 
     </div>
@@ -186,3 +231,5 @@
   </div>
 
 </div>
+
+
